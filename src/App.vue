@@ -16,17 +16,22 @@
 <h1>Toggle Button</h1>
 <ToggleComponent class="margin_1" classname="toggle round"/>
      
+<h1>Accordion Component</h1>
+<AccordionComponent classname="hello"></AccordionComponent>  
+
 </template>
 
 <script> 
 import ButtonComponent from './components/ButtonComponent.vue';
-import ToggleComponent from './components/ToggleComponent.vue'
+import ToggleComponent from './components/ToggleComponent.vue';
+import AccordionComponent from './components/AccordionComponent.vue'
 
 export default {
   name: 'App',
   components: {
     ButtonComponent,
-    ToggleComponent
+    ToggleComponent,
+    AccordionComponent
   }
 }
 </script>
