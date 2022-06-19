@@ -1,5 +1,5 @@
 <template>
-    <div class="box-wrapper" v-if="alerts.length">
+    <div class="box-wrapper box-alert-mask" v-if="alerts.length">
         <BoxAlertStructure v-for="(alert, index) of alerts"
                    :alert="alert"
                    :key="index">
@@ -25,13 +25,23 @@
 
 <style scoped>
     .box-wrapper {
-        width: 600px;
-        min-height: 150px;
+        width: 100%;
+        height:100%;
+        min-height: 100%;
         display: flex;
         flex-direction: column;
         align-items: center;
+    }
+
+    .box-alert-mask {
         position: fixed;
-        right: 1rem;
-        top: 1rem;
+        z-index: 9999;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: table;
+        transition: opacity 0.3s ease;
     }
 </style>

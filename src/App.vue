@@ -2,9 +2,14 @@
     <h1>Simple Button</h1>
     <ButtonComponent classname="primary margin_1">Click Me</ButtonComponent>
     <ButtonComponent classname="primary_wh margin_1">Click Me</ButtonComponent>
-    <ButtonComponent classname="primary_woh margin_1" @click='useToast("success","title","message",5000)'>Success</ButtonComponent>
-    <ButtonComponent classname="round-tag margin_1" @click='useToast("error","title","message",5000)'>Error</ButtonComponent>
-    <ButtonComponent classname="round-tag_woh margin_1" @click='useToast("info","title","message",5000)'>Info</ButtonComponent>
+    <ButtonComponent classname="primary_woh margin_1" @click='useToast({type:"success",title:"title",message:"message",time:5000})'>Success</ButtonComponent>
+    <ButtonComponent classname="round-tag margin_1" @click='useToast({type:"error",title:"title",message:"message",time:5000})'>Error</ButtonComponent>
+    <ButtonComponent classname="round-tag_woh margin_1" @click='useToast({type:"info",title:"title",message:"message",time:5000})'>Info</ButtonComponent>
+    <ButtonComponent classname="primary_woh margin_1" @click='useToast("success","title","message",5000,"solid")'>Solid Success</ButtonComponent>
+    <ButtonComponent classname="round-tag margin_1" @click='useToast("error","title","message",5000,"solid")'>Solid Error</ButtonComponent>
+    <ButtonComponent classname="round-tag_woh margin_1" @click='useToast("info","title","message",5000,"solid")'>Solid Info</ButtonComponent>
+    <ButtonComponent classname="round-tag_woh margin_1" @click='useToast("primary","title","message",5000,"solid")'>Solid primary</ButtonComponent>
+
     <ButtonComponent classname="round-tag_wh margin_1" @click='useAlert("caution",agree,cancel,"title","message")'>Continue</ButtonComponent>
     <!--<ButtonComponent classname="round-tag_wh margin_1" @click='useAlert("readmore",agree,cancel,"title","message",5000)'>Continue</ButtonComponent>-->
     <h1>Floating Button</h1>
@@ -19,16 +24,25 @@
     <BoxAlertComponent />
     <h1>Toggle Button</h1>
     <ToggleComponent class="margin_1" classname="toggle round" />
-
+    <h1>Alerts</h1>
+    <ButtonComponent classname="primary_wh margin_1">Click Me</ButtonComponent>
+    <ButtonComponent classname="primary_wh margin_1" @click='useToast({type:"success",title:"Success",message:"message",time:5000})'>Success</ButtonComponent>
+    <ButtonComponent classname="primary_wh margin_1" @click='useToast({type:"error",title:"Error",message:"message",time:500000})'>Error</ButtonComponent>
+    <ButtonComponent classname="primary_wh margin_1" @click='useToast({type:"info",title:"Info",message:"message",time:5000})'>Info</ButtonComponent>
+    <ButtonComponent classname="primary_wh margin_1" @click='useToast({type:"success",title:"Solid Success",message:"message",time:5000,varient:"solid"})'>Solid Success</ButtonComponent>
+    <ButtonComponent classname="primary_wh margin_1" @click='useToast({type:"error",title:"Solid Error",message:"message",time:5000,varient:"solid"})'>Solid Error</ButtonComponent>
+    <ButtonComponent classname="primary_wh margin_1" @click='useToast({type:"info",title:"Solid Info",message:"message",time:5000,varient:"solid"})'>Solid Info</ButtonComponent>
+    <ButtonComponent classname="primary_wh margin_1" @click='useToast({type:"primary",title:"Solid Primary",message:"message",time:5000,varient:"solid"})'>Solid primary</ButtonComponent>
+    <ButtonComponent classname="primary_wh margin_1" @click='useToast({type:"gradient",title:"Solid Gradient",message:"message",time:5000,varient:"solid"})'>Solid Gradient</ButtonComponent>
+   
 </template>
 
 <script> 
 import ButtonComponent from './components/ButtonComponent.vue';
     import ToggleComponent from './components/ToggleComponent.vue';
     import ToastComponent from './components/Alert/Toast.vue';
-    import BoxAlertComponent from './components/Alert/BoxAlert.vue';
-
-    import { useToast, useAlert } from './components/Alert/Alert.js';
+    
+    import { useToast } from './components/Alert/Alert.js';
     
 
     export default {
@@ -36,17 +50,10 @@ import ButtonComponent from './components/ButtonComponent.vue';
         components: {
             ButtonComponent,
             ToggleComponent,
-            ToastComponent,
-            BoxAlertComponent
+            ToastComponent
         },
         setup() {
-           function agree(){
-               console.log("agree");
-            }
-            function cancel() {
-                console.log("cancel");
-            }
-            return { useToast,agree ,cancel,useAlert};
+            return { useToast};
         }
      
 }
