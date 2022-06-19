@@ -28,6 +28,11 @@
 <h1>Footer Component</h1>
 <FooterComponent/>
 
+<h1>Slider Component</h1>
+<SliderComponent @clicked="getclick"/>
+
+<p>{{title}}</p>
+
 </template>
 
 <script> 
@@ -38,6 +43,8 @@ import DropdownComponent from './components/DropdownComponent.vue';
 import DropdownItem from './components/DropdownItem.vue';
 import NavbarComponent from './components/NavbarComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
+import SliderComponent from './components/SliderComponent.vue';
+import { ref } from 'vue'
 
 export default {
   name: 'App',
@@ -48,8 +55,21 @@ export default {
     DropdownComponent,
     DropdownItem,
     NavbarComponent,
-    FooterComponent
-  }
+    FooterComponent,
+    SliderComponent
+  },
+  setup() {
+    const title = ref('0')
+    function getclick(value) {
+      title.value = value;
+      console.log(title.value); 
+   }
+
+   return {
+    title,
+    getclick
+   }
+  } 
 }
 </script>
 
