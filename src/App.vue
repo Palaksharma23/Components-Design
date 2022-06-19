@@ -1,4 +1,80 @@
 <template>
+
+<h1>Accordion Component</h1>
+<AccordionComponent classname="container80 center"
+      ><AccordionItem
+        Heading="List One"
+        label="label_secondary"
+        content="content_secondary_dark"
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+          saepe necessitatibus laboriosam architecto tempore a dicta quod sunt
+          doloribus perspiciatis!
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas,
+          hic, id reiciendis doloremque quos possimus enim aut voluptates quo
+          praesentium accusamus cumque aliquid beatae esse nesciunt. Vel
+          possimus aliquid facere?
+        </p>
+      </AccordionItem>
+      <AccordionItem
+        Heading="List Two"
+        label="label_secondary"
+        content="content_secondary"
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+          saepe necessitatibus laboriosam architecto tempore a dicta quod sunt
+          doloribus perspiciatis!
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas,
+          hic, id reiciendis doloremque quos possimus enim aut voluptates quo
+          praesentium accusamus cumque aliquid beatae esse nesciunt. Vel
+          possimus aliquid facere?
+        </p>
+      </AccordionItem></AccordionComponent
+    >
+    <br />
+    <AccordionComponent classname="container80 center"
+      ><AccordionItem
+        Heading="List One"
+        label="label_primary_dark"
+        content="content_primary_dark"
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+          saepe necessitatibus laboriosam architecto tempore a dicta quod sunt
+          doloribus perspiciatis!
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas,
+          hic, id reiciendis doloremque quos possimus enim aut voluptates quo
+          praesentium accusamus cumque aliquid beatae esse nesciunt. Vel
+          possimus aliquid facere?
+        </p>
+      </AccordionItem>
+      <AccordionItem
+        Heading="List Two"
+        label="label_primary"
+        content="content_primary"
+      >
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Recusandae
+          saepe necessitatibus laboriosam architecto tempore a dicta quod sunt
+          doloribus perspiciatis!
+        </p>
+        <p>
+          Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas,
+          hic, id reiciendis doloremque quos possimus enim aut voluptates quo
+          praesentium accusamus cumque aliquid beatae esse nesciunt. Vel
+          possimus aliquid facere?
+        </p>
+      </AccordionItem></AccordionComponent
+    >
+    
     <h1>Simple Button</h1>
   <ButtonComponent classname="primary margin_1">Click Me</ButtonComponent>
   <ButtonComponent classname="primary_wh margin_1">Click Me</ButtonComponent>
@@ -33,12 +109,15 @@
 
 <p>{{title}}</p>
 
+
+
 </template>
 
 <script> 
+import AccordionComponent from "./components/Accordion/AccordionComponent.vue";
+import AccordionItem from "./components/Accordion/AccordionItem.vue";
 import ButtonComponent from './components/ButtonComponent.vue';
-import ToggleComponent from './components/ToggleComponent.vue';
-import AccordionComponent from './components/AccordionComponent.vue';
+import ToggleComponent from './components/ToggleComponent.vue'; 
 import DropdownComponent from './components/DropdownComponent.vue';
 import DropdownItem from './components/DropdownItem.vue';
 import NavbarComponent from './components/NavbarComponent.vue';
@@ -49,9 +128,10 @@ import { ref } from 'vue'
 export default {
   name: 'App',
   components: {
-    ButtonComponent,
-    ToggleComponent,
     AccordionComponent,
+    AccordionItem,
+    ButtonComponent,
+    ToggleComponent, 
     DropdownComponent,
     DropdownItem,
     NavbarComponent,
