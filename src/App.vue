@@ -78,13 +78,9 @@
     <h1>Simple Button</h1>
     <ButtonComponent classname="primary margin_1">Click Me</ButtonComponent>
     <ButtonComponent classname="primary_wh margin_1">Click Me</ButtonComponent>
-    <ButtonComponent classname="primary_woh margin_1" @click='useToast({type:"success",title:"title",message:"message",time:5000})'>Success</ButtonComponent>
-    <ButtonComponent classname="round-tag margin_1" @click='useToast({type:"error",title:"title",message:"message",time:5000})'>Error</ButtonComponent>
-    <ButtonComponent classname="round-tag_woh margin_1" @click='useToast({type:"info",title:"title",message:"message",time:5000})'>Info</ButtonComponent>
-    <ButtonComponent classname="primary_woh margin_1" @click='useToast("success","title","message",5000,"solid")'>Solid Success</ButtonComponent>
-    <ButtonComponent classname="round-tag margin_1" @click='useToast("error","title","message",5000,"solid")'>Solid Error</ButtonComponent>
-    <ButtonComponent classname="round-tag_woh margin_1" @click='useToast("info","title","message",5000,"solid")'>Solid Info</ButtonComponent>
-    <ButtonComponent classname="round-tag_woh margin_1" @click='useToast("primary","title","message",5000,"solid")'>Solid primary</ButtonComponent>
+    <ButtonComponent classname="primary_woh margin_1">Click Me</ButtonComponent>
+    <ButtonComponent classname="round-tag margin_1">Click Me</ButtonComponent>
+    <ButtonComponent classname="round-tag_woh margin_1">Click Me</ButtonComponent>
 
     <ButtonComponent classname="round-tag_wh margin_1" @click='useAlert("caution",agree,cancel,"title","message")'>Continue</ButtonComponent>
     <!--<ButtonComponent classname="round-tag_wh margin_1" @click='useAlert("readmore",agree,cancel,"title","message",5000)'>Continue</ButtonComponent>-->
@@ -102,7 +98,7 @@
     <h1>Alerts</h1>
     <ButtonComponent classname="primary_wh margin_1">Click Me</ButtonComponent>
     <ButtonComponent classname="primary_wh margin_1" @click='useToast({type:"success",title:"Success",message:"message",time:5000})'>Success</ButtonComponent>
-    <ButtonComponent classname="primary_wh margin_1" @click='useToast({type:"error",title:"Error",message:"message",time:500000})'>Error</ButtonComponent>
+    <ButtonComponent classname="primary_wh margin_1" @click='useToast({type:"error",title:"Error",message:"message",time:5000})'>Error</ButtonComponent>
     <ButtonComponent classname="primary_wh margin_1" @click='useToast({type:"info",title:"Info",message:"message",time:5000})'>Info</ButtonComponent>
     <ButtonComponent classname="primary_wh margin_1" @click='useToast({type:"success",title:"Solid Success",message:"message",time:5000,varient:"solid"})'>Solid Success</ButtonComponent>
     <ButtonComponent classname="primary_wh margin_1" @click='useToast({type:"error",title:"Solid Error",message:"message",time:5000,varient:"solid"})'>Solid Error</ButtonComponent>
@@ -136,15 +132,13 @@
 import AccordionComponent from "./components/Accordion/AccordionComponent.vue";
 import AccordionItem from "./components/Accordion/AccordionItem.vue";
 import ButtonComponent from './components/ButtonComponent.vue';
- 
 import ToggleComponent from './components/ToggleComponent.vue'; 
 import DropdownComponent from './components/DropdownComponent.vue';
 import DropdownItem from './components/DropdownItem.vue';
 import NavbarComponent from './components/NavbarComponent.vue';
 import FooterComponent from './components/FooterComponent.vue';
 import SliderComponent from './components/SliderComponent.vue';
-import ToggleComponent from './components/ToggleComponent.vue';
-    import ToastComponent from './components/Alert/Toast.vue';
+import ToastComponent from './components/Alert/Toast.vue';
 import { ref } from 'vue'
 import { useToast } from './components/Alert/Alert.js';
 
