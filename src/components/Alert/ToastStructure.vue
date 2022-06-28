@@ -4,7 +4,7 @@
         <div class="content">
             <div v-if="toast.title" class="header">
                 <h3>{{ toast.title }}</h3>
-                <button @click="dismissToast">X</button>
+                <button @click="dismissToast($store,toast.id)">X</button>
             </div>
             <div v-if="toast.message" class="text">
                 <p>{{ toast.message }}</p>
@@ -15,7 +15,7 @@
         <div class="content">
             <div v-if="toast.title" class="header">
                 <h3>{{ toast.title }}</h3>
-                <button @click="dismissToast">X</button>
+                <button @click="dismissToast($store,toast.id)">X</button>
             </div>
             <div v-if="toast.message" class="text">
                 <p>{{ toast.message }}</p>
@@ -33,14 +33,14 @@
 
         created() {
             setTimeout(() => {
-                this.dismissToast();
+                this.dismissToast(this.$store, this.toast.id);
             }, this.toast.time);
         },
 
         setup() {
 
-            function dismissToast() {
-                this.$store.commit('clearToast', this.toast.title);
+            function dismissToast(store, id) {
+                store.commit('clearToast', id);
             }
 
             return { dismissToast }
@@ -63,7 +63,7 @@
         --gradient: linear-gradient(rgba(115, 232, 163, 1), rgba(56, 133, 145, 0));
     }
 
-    .success, .info, .error, .primary,.warning {
+    .success, .info, .error, .primary, .warning {
         color: var(--white);
     }
 
@@ -111,7 +111,7 @@
         box-shadow: 0px 4px 9px rgba(96, 79, 79, 0.25);
     }
 
-    .normal .warning{
+    .normal .warning {
         background-color: var(--yellow);
     }
 
