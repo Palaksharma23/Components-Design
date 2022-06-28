@@ -1,20 +1,7 @@
 import store from '../../store/store';
-
+import { v4 as uuid } from 'uuid';
 
 export function useToast(passed) {
-    //console.dir(msg+" "+type+" "+time+" "+title)
-    
-    store.commit('addToast',passed);
-}
-
-export function useAlert(givenType, agreeFunc, cancelFunc, givenTitle, GivenMessage) {
-    //console.dir(msg+" "+type+" "+time+" "+title)
-    store.commit('addAlert', {
-        agree: agreeFunc,
-        cancel:cancelFunc,
-        title: givenTitle,
-        type: givenType,
-        message: GivenMessage
-    });
-
+    passed.id = uuid();
+    store.commit('addToast', passed);
 }

@@ -1,15 +1,15 @@
 <template>
     <div class="toasts-wrapper" v-if="toasts.length">
         <ToastStructure v-for="(toast, index) of toasts"
-               :toast="toast"
-               :key="index">
+                        :toast="toast"
+                        :key="index">
         </ToastStructure>
     </div>
 </template>
 
 <script>
     import ToastStructure from './../Alert/ToastStructure.vue'
-    
+
     export default {
         name: 'ToastComponent',
         components: { ToastStructure },
@@ -18,9 +18,9 @@
                 return this.$store.state.toasts;
             }
         },
-        
+
     }
-    
+
 </script>
 
 <style>

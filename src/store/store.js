@@ -3,21 +3,21 @@ import { createStore } from 'vuex'
 export default createStore({
     state: {
         toasts: [],
-        alerts:[]
+        alerts: []
     },
     mutations: {
         addToast(state, toast) {
             state.toasts.push(toast);
         },
-        clearToast(state, title) {
-            const index = state.toasts.findIndex((toast) => toast.title === title);
+        clearToast(state, id) {
+            const index = state.toasts.findIndex((toast) => toast.id === id);
             state.toasts.splice(index, 1);
         },
         addAlert(state, alert) {
             state.alerts.push(alert);
         },
-        clearAlert(state, title) {
-            const index = state.alerts.findIndex((alert) => alert.title === title);
+        clearAlert(state, id) {
+            const index = state.alerts.findIndex((alert) => alert.id === id);
             state.alerts.splice(index, 1);
         }
     },
