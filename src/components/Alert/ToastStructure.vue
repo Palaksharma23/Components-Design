@@ -53,16 +53,17 @@
         --cream: #faf8f7;
         --light-grey: #e7e7e7;
         --black: #000000;
+        --yellow: #ffeb3b;
         --grey: #cccccc;
         --white: #FFFFFF;
         --green: #009900;
-        --red: #990000;
-        --blue: #009999;
+        --red: #f44336;
+        --blue: #2196F3;
         --primary: #475447;
         --gradient: linear-gradient(rgba(115, 232, 163, 1), rgba(56, 133, 145, 0));
     }
 
-    .success, .info, .error, .primary {
+    .success, .info, .error, .primary,.warning {
         color: var(--white);
     }
 
@@ -105,6 +106,15 @@
         background-color: var(--primary);
     }
 
+    .normal .gradient {
+        background-image: var(--gradient);
+        box-shadow: 0px 4px 9px rgba(96, 79, 79, 0.25);
+    }
+
+    .normal .warning{
+        background-color: var(--yellow);
+    }
+
     .toast.solid.success {
         background-color: var(--green);
     }
@@ -124,6 +134,10 @@
     .toast.solid.gradient {
         background-image: var(--gradient);
         box-shadow: 0px 4px 9px rgba(96, 79, 79, 0.25);
+    }
+
+    .toast.solid.warning {
+        background-color: var(--yellow);
     }
 
 
